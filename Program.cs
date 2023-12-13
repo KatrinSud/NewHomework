@@ -108,15 +108,23 @@ for(int i = 0; i < array.Length; i++)
   {
     
        if (array[i] > max) 
+       {
+        max = array[i];
          Console.WriteLine($"Максимальное число {max} ");
-        
+       }
          
-        if (array[i] < max) 
+        if (array[i] < min)
+        {
+            min = array[i];
            Console.WriteLine($"Минимальное число {min} ");
-
+        }
      
    
    delta = max - min; 
 
    Console.WriteLine($"разница между макс и мин элементом массива { delta }");
 }
+
+
+// Проверяю еще раз команду push
+
