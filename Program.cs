@@ -47,3 +47,45 @@ int InputNumbers(string input)
 
 
 // Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
+
+
+Console.WriteLine("Введите размер массива");
+int userLength = int.Parse(Console.ReadLine());
+int[] userArray = CreateArray(userLength);
+
+int[] CreateArray (int length)
+{
+    Random random = new Random();
+    int[] array = new int[length];
+    for (int i = 0; i < length; i++)
+    {
+        array[i] = random.Next(1,11);
+    }
+    return array;
+}
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]}");
+    }
+}
+
+void PrintReversArray (int [] array, int length)
+{
+    if (length ==1)
+    {
+        Console.Write($"{array[0]}");
+    }
+    else
+    {
+        Console.Write($"{array[length - 1]}");
+        PrintReversArray(array, length - 1);
+    }
+}
+
+PrintArray(userArray);
+Console.WriteLine();
+PrintReversArray(userArray, userLength);
+
